@@ -42,6 +42,14 @@ def run_debug():
     app.run(debug=True)
 
 @manager.command
+def list_db_session():
+    sess= db.session.query(UserSession).all()
+
+    for s in sess:
+        print "Session: ", s.name, s.cookie, s.created, s.userdata
+    return True
+
+@manager.command
 def run_public():
     app.run(host="0.0.0.0", debug=True)
 
