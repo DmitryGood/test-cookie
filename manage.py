@@ -8,7 +8,7 @@ from flask_APIdefinition import app, db
 
 
 #app = Flask(__name__,  static_folder=WorkConfig.STATIC_FOLDER)
-app.config.from_object(TestConfig)
+app.config.from_object(WorkConfig)
 
 
 manager = Manager(app)

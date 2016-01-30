@@ -3,7 +3,7 @@
 import os
 basedir = os.path.abspath(os.path.dirname(__file__))
 
-#print "Basedir: ", basedir
+print "Basedir: ", basedir
 #print "Static dir: ", static_folder
 
 
@@ -17,8 +17,10 @@ class BaseConfig(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     UPLOAD_FOLDER = basedir+ '/upload'
     ALLOWED_EXTENSIONS = set(['xls', 'xlsx'])
-    STATIC_FOLDER = basedir[:basedir.rfind('/')] + '/site'
-    TEMPLATE_FOLDER = basedir[:basedir.rfind('/')] + '/site/templates'
+    #STATIC_FOLDER = basedir[:basedir.rfind('/')] + '/site'
+    #TEMPLATE_FOLDER = basedir[:basedir.rfind('/')] + '/site/templates'
+    STATIC_FOLDER = basedir + '/site'
+    TEMPLATE_FOLDER = basedir + '/site/templates'
     #PERMANENT_SESSION_LIFETIME =
 
 
@@ -26,7 +28,7 @@ class WorkConfig(BaseConfig):
     DEBUG = True
     if os.environ.get('DATABASE_URL') is None:
         #SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
-        SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'cloudcomp_v1.sqlite')
+        SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'cookietest_v1.sqlite')
     else:
         SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
 
