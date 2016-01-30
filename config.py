@@ -18,6 +18,8 @@ class BaseConfig(object):
     UPLOAD_FOLDER = basedir+ '/upload'
     ALLOWED_EXTENSIONS = set(['xls', 'xlsx'])
     STATIC_FOLDER = basedir[:basedir.rfind('/')] + '/site'
+    TEMPLATE_FOLDER = basedir[:basedir.rfind('/')] + '/site/templates'
+    #PERMANENT_SESSION_LIFETIME =
 
 
 class WorkConfig(BaseConfig):
